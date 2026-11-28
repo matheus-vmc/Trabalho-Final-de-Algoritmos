@@ -1,15 +1,11 @@
-#Aluno: Matheus Vinicius Maciel da Cunha
-#Matricula:20260015011
 import os
-#Coloquei uma coisa a mais na class, que seria o nome da tarefa
 class task:
     name = ""
     status = ""
     descri = ""
     priori = 0
     id = 0
-#Função para ordenar os numeros de prioridade da tarefa
-#O menor tem a maior prioridade
+
 def ordenar(list_task):
     tamanho = len(list_task)
     for i in range(tamanho):
@@ -18,9 +14,9 @@ def ordenar(list_task):
                 temp = list_task[j]
                 list_task[j] = list_task[j+1]
                 list_task[j+1] = temp
-#Função para adicionar uma nova tarefa na lista de tarefas
+
 def new_task(list_task):
-    #A função os que importei server apenas para limpar o terminal, nada além disso
+    
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Descreva sua Tarefa")
     print("-"*50)
@@ -52,7 +48,7 @@ def new_task(list_task):
     list_task.append(new)   
     print ("Tarefa cadastrada com sucesso.")
 
-#Função que exibe o conteúdo da lista de tarefas
+
 def visual_task(list_task):
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Suas Tarefas:")
@@ -66,7 +62,7 @@ def visual_task(list_task):
         print("-"*50)
     
             
-#Essa função serve para marca a tarefa como concluída, ela também verifica se a task já foi concluída
+
 def task_completed(list_task):
     os.system('cls' if os.name == 'nt' else 'clear')
     visual_task(list_task)
@@ -84,7 +80,7 @@ def task_completed(list_task):
         print("Codigo inválido")
              
     
-#Função que faz a tarefa ir de concluída para ativa
+
 def reabrir_task(list_task):
     os.system('cls' if os.name == 'nt' else 'clear')
     visual_task(list_task)
@@ -101,7 +97,7 @@ def reabrir_task(list_task):
             print("Codigo incorreto, digite novamente")
 
 
-#Função para editar a descrição da tarefa e o nome dela atravéz do identificador unico
+
 def edit_task(list_task):
     os.system('cls' if os.name == 'nt' else 'clear')
     visual_task(list_task)
@@ -165,7 +161,7 @@ def relatorio_estátistico(list_task):
     print("Tarefas Concluídas:",concluidas)
     print ("Média de prioridade:",media)
 
-#Menu principal utilizado para interagir com o programa e aonde é armazenado a lista de tarefas
+
 def menu():
     list_task = []
     
